@@ -15,8 +15,8 @@ class MainActivity2 : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
 
         //ACTIVITY DESTINO
-        val mensajeBienvenida:TextView = findViewById(R.id.tx_bienvenido)
-        val btnFormulario:Button = findViewById(R.id.btnFormulario)
+        val mensajeBienvenida:TextView = findViewById(R.id.txBienvenido)
+        val btnCalculadora:Button = findViewById(R.id.btnCalculadora)
 
         //CREO VARIABLE ASIGNO VALOR DESDE OTRO ACTIVITY
         val usuarioDesdeotroActivity = intent.getStringExtra("pUsuario")
@@ -27,7 +27,7 @@ class MainActivity2 : AppCompatActivity() {
         val recibeClave = intent.getStringExtra("par_clave")
 
         //ACCION SOBRE EL BOTON
-        btnFormulario.setOnClickListener()
+        btnCalculadora.setOnClickListener()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
