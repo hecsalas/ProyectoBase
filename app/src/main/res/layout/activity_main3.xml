@@ -11,9 +11,9 @@
         android:id="@+id/edNumber1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Primer numero"
         android:ems="10"
         android:inputType="number"
+        android:text="Primer numero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,9 +23,9 @@
         android:id="@+id/edNumber2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Segundo numero"
         android:ems="10"
         android:inputType="number"
+        android:text="Segundo numero"
         app:layout_constraintBottom_toTopOf="@+id/txMsj"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -51,4 +51,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="341dp" />
+
+    <Spinner
+        android:id="@+id/spOperaciones"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.002" />
 </androidx.constraintlayout.widget.ConstraintLayout>
