@@ -1,5 +1,6 @@
 package com.example.miproyectobase2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -14,20 +15,25 @@ class MainActivity2 : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main2)
 
+
+
+        val btnCalculadora:Button = findViewById(R.id.btn_abrir_calculadora)
+
+        btnCalculadora.setOnClickListener{
+            val abrirCalculadora = Intent(this, MainActivity5::class.java)
+            startActivity(abrirCalculadora)
+        }
+
+
         //ACTIVITY DESTINO
-        val mensajeBienvenida:TextView = findViewById(R.id.txBienvenido)
-        val btnCalculadora:Button = findViewById(R.id.btnCalculadora)
-
+        val msjeBienvenida:TextView = findViewById(R.id.tx_bienvenido)
         //CREO VARIABLE ASIGNO VALOR DESDE OTRO ACTIVITY
-        val usuarioDesdeotroActivity = intent.getStringExtra("pUsuario")
-
+        val usuarioDesdeOtroActivity = intent.getStringExtra("sesion")
         //SETEO UN TEXT VIEW REEMPLAZANDO EL TEXTO POR EL CONTENIDO
-        mensajeBienvenida.text = usuarioDesdeotroActivity.toString()
+        msjeBienvenida.text = usuarioDesdeOtroActivity.toString()
 
-        val recibeClave = intent.getStringExtra("par_clave")
+        val recibeContrasena = intent.getStringExtra("par_contrasena")
 
-        //ACCION SOBRE EL BOTON
-        btnCalculadora.setOnClickListener()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

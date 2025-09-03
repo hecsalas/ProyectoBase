@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,33 +17,37 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        //declaramos variables con los elementos del layout
-        val edUsername:EditText = findViewById(R.id.edUsername)
-        val edClave:EditText = findViewById(R.id.edClave)
-        val btnLogin:Button = findViewById(R.id.btnLogin)
-        val txMensaje:TextView = findViewById(R.id.txmensaje)
+        //variables con los elementos del layout
+        val edUsername:EditText = findViewById(R.id.ed_username)
+        val edPasswd:EditText = findViewById(R.id.ed_password)
+        val btnlogin:Button = findViewById(R.id.btn_login)
+        val txMensaje:TextView = findViewById(R.id.tx_mensaje)
 
-        //variables en duro
-        var defaultUsr = "admin@duocuc.cl"
-        var defaultclave = "admin123"
+        //variables para la password
+        var usuarioBase = "admin"
+        var passwdBase = "admin123"
 
-        //Accion sobre el boton
-        btnLogin.setOnClickListener{
-            if(edUsername.text.toString() == defaultUsr &&
-                edClave.text.toString() == defaultclave){
-                txMensaje.text = "Bienvenid@"
+        btnlogin.setOnClickListener{
 
+            if(edUsername.text.toString() == usuarioBase
+                && edPasswd.text.toString() == passwdBase){
+
+                //Crear objeto intent
                 val nuevaVentana = Intent(this, MainActivity2::class.java)
-                nuevaVentana.putExtra("pUsuario",edUsername.text.toString())
 
+                var ses_username = edUsername.text.toString()
+
+                nuevaVentana.putExtra("sesion",ses_username)
+                nuevaVentana.putExtra("par_contrasena", edPasswd.text.toString() )  // abrimos el Activity
                 startActivity(nuevaVentana)
 
+                val toast = Toast.makeText(this, "Bienvenid@s: "+ses_username, Toast.LENGTH_SHORT) // in Activity
+                toast.show()
+                txMensaje.text = "Login OK!!"
             }else{
-                txMensaje.text = "Error! Usuario/Password Incorrecto "
-
+                txMensaje.text = "Login NO!!"
             }
         }
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
