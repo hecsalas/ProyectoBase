@@ -13,7 +13,7 @@ object Conversor {
 
         try {
             var tipoCambio: Double = 900.0
-            var resultado: Double = valorPesos / tipoCambio
+            var resultado: Double = valorPesos * tipoCambio
             return resultado.toString()
 
         }catch (e: ArithmeticException){

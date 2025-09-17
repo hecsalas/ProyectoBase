@@ -48,25 +48,23 @@ class MainActivity4 : AppCompatActivity() {
 
         btnCalcular.setOnClickListener{
 
-            var numeroUnoConv: Int = numeroUno.text.toString().toIntOrNull() ?: 0
-            var numeroDosConv: Int = numeroDos.text.toString().toIntOrNull() ?: 0
+            val numeroUnoConv: Int = numeroUno.text.toString().toIntOrNull() ?: 0
+            val numeroDosConv: Int = numeroDos.text.toString().toIntOrNull() ?: 0
 
-            if (str_op_selected == "Sumar"){
-                val resultado =OpMatematicas.sumar(numeroUnoConv, numeroDosConv)
-                txResultado.text = resultado.toString()+" op: " + str_op_selected.toString()
+            if(str_op_selected == "Sumar"){
+                val resultado = OpMatematicas.sumar(numeroUnoConv, numeroDosConv)
+                txResultado.text = resultado.toString()+" op: " +str_op_selected.toString()
 
-            }else if (str_op_selected == "Restar"){
+            }else if(str_op_selected == "Restar"){
                 val resultado = OpMatematicas.restar(numeroUnoConv, numeroDosConv)
                 txResultado.text = resultado.toString()+" op: " +str_op_selected.toString()
 
             }else if (str_op_selected == "Multiplicar"){
                 val resultado = OpMatematicas.multiplicar(numeroUnoConv, numeroDosConv)
-                txResultado.text = resultado.toString()+" op: " +str_op_selected.toString()
+                txResultado.text = resultado.toString()+ " op: " + str_op_selected.toString()
 
-            }else if (str_op_selected == "Dividir"){
-                val resultado = OpMatematicas.dividir(numeroUnoConv, numeroDosConv)
-                txResultado.text = resultado.toString()+" op: " +str_op_selected.toString()
             }
+
 
         }
 

@@ -32,7 +32,7 @@ class MainActivity5 : AppCompatActivity() {
                 edMontoPesos.text = null
             }
 
-            //txResultado.text = "RESULTADO: " + Conversor.convertir_usd_string(montoPesosInt)
+            txResultado.text = "RESULTADO: " + Conversor.convertir_usd_string(montoPesosInt) + " CLP"
 
         }
 

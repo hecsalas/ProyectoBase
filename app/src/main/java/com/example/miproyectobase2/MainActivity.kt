@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         //variables para la password
         var usuarioBase = "admin"
-        var passwdBase = "admin123"
+        var passwdBase = "admin"
 
         btnlogin.setOnClickListener{
 

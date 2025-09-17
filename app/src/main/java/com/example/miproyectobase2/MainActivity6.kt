@@ -1,5 +1,6 @@
 package com.example.miproyectobase2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
@@ -17,8 +18,8 @@ class MainActivity6 : AppCompatActivity() {
 
         val opcionesLV: ListView = findViewById(R.id.lv_menu_principal)
         val opcionesArr = arrayOf(
-            "Sumar"
-            , "Restar"
+            "Calculadora"
+            , "Conversor"
             , "Multiplicar"
             , "Hola Mundo"
             , "Dividir")
@@ -31,7 +32,15 @@ class MainActivity6 : AppCompatActivity() {
 
         opcionesLV.setOnItemClickListener { parent, view, position, id ->
             val itemElegido = parent.getItemAtPosition(position).toString()
-            Toast.makeText(this, itemElegido, Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, itemElegido, Toast.LENGTH_SHORT).show()
+
+            if (itemElegido == "Calculadora"){
+                val nuevaVentana = Intent(this, MainActivity4::class.java)
+                startActivity(nuevaVentana)
+            }else if (itemElegido == "Conversor"){
+                val nuevaVentana = Intent(this, MainActivity5::class.java)
+                startActivity(nuevaVentana)
+            }
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
