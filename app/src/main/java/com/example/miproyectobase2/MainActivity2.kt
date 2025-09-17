@@ -20,7 +20,7 @@ class MainActivity2 : AppCompatActivity() {
         val btnCalculadora:Button = findViewById(R.id.btn_abrir_calculadora)
 
         btnCalculadora.setOnClickListener{
-            val abrirCalculadora = Intent(this, MainActivity5::class.java)
+            val abrirCalculadora = Intent(this, MainActivity6::class.java)
             startActivity(abrirCalculadora)
         }
 
