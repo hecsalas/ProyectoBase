@@ -28,6 +28,7 @@ class MainActivity4 : AppCompatActivity() {
         val btnCalcular: Button = findViewById(R.id.btn_calcular)
 
         //Declaramos arraylist
+
         val opcionesSpinner = arrayOf(
             "Sumar"
             , "Restar"
@@ -40,31 +41,33 @@ class MainActivity4 : AppCompatActivity() {
             android.R.layout.simple_list_item_1,
             opcionesSpinner)
 
-        //
-        spOperacionesMat.adapter =adaptador
 
-        // leer item de la lista seleccionado
-        var str_op_selected = spOperacionesMat.selectedItem.toString()
+        spOperacionesMat.adapter = adaptador
 
         btnCalcular.setOnClickListener{
+
+            // leer item de la lista seleccionado
+            var str_op_selected = spOperacionesMat.selectedItem.toString()
 
             val numeroUnoConv: Int = numeroUno.text.toString().toIntOrNull() ?: 0
             val numeroDosConv: Int = numeroDos.text.toString().toIntOrNull() ?: 0
 
             if(str_op_selected == "Sumar"){
                 val resultado = OpMatematicas.sumar(numeroUnoConv, numeroDosConv)
-                txResultado.text = resultado.toString()+" op: " +str_op_selected.toString()
+                txResultado.text = "Opción " +str_op_selected + ": " +resultado.toString()
 
             }else if(str_op_selected == "Restar"){
                 val resultado = OpMatematicas.restar(numeroUnoConv, numeroDosConv)
-                txResultado.text = resultado.toString()+" op: " +str_op_selected.toString()
+                txResultado.text = "Opción " +str_op_selected + ": " +resultado.toString()
 
             }else if (str_op_selected == "Multiplicar"){
                 val resultado = OpMatematicas.multiplicar(numeroUnoConv, numeroDosConv)
-                txResultado.text = resultado.toString()+ " op: " + str_op_selected.toString()
+                txResultado.text = "Opción " +str_op_selected + ": " +resultado.toString()
 
+            }else if (str_op_selected == "Dividir"){
+                val resultado = OpMatematicas.dividir(numeroUnoConv, numeroDosConv)
+                txResultado.text = "Opción " +str_op_selected + ": " +resultado.toString()
             }
-
 
         }
 
