@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 && edPasswd.text.toString() == passwdBase){
 
                 //Crear objeto intent
-                val nuevaVentana = Intent(this, MainActivity2::class.java)
+                val nuevaVentana = Intent(this, SpinnerRegionComuna::class.java)
 
                 var ses_username = edUsername.text.toString()
 

@@ -13,8 +13,9 @@ object AlumnosRepository {
             Result.failure(e)
         }
     }
+}
 
-    suspend fun insertAlumno(request: AlumnoInsertRequest): Result<InsertRecordsResponseesponse> = withContext(Dispatchers.IO) {
+  /*  suspend fun insertAlumno(request: AlumnoInsertRequest): Result<InsertRecordsResponseesponse> = withContext(Dispatchers.IO) {
         try {
             Result.success(ApiDuocClient.service.insertAlumno(request))
         } catch (e: Exception) {
@@ -22,3 +23,5 @@ object AlumnosRepository {
         }
     }
 }
+
+   */
