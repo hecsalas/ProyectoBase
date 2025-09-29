@@ -16,7 +16,6 @@ class SpinnerRegionComuna : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main7)
 
-        // val opcionesLV: ListView = findViewById(R.id.lv_menu_principal)
         val spRegion : Spinner = findViewById(R.id.sp_region)
         val spComuna : Spinner = findViewById(R.id.sp_comuna)
         val btnAceptar : Button = findViewById(R.id.btn_aceptar)
@@ -26,6 +25,8 @@ class SpinnerRegionComuna : AppCompatActivity() {
         //CargarAlumnosAPI.cargarAlumnos(this, listaAlumnos)
 
         CargarRegionComunaAPI.cargarRegionComuna(this, spRegion)
+        CargarRegionComunaAPI.cargarRegionComuna2(this,spComuna)
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
